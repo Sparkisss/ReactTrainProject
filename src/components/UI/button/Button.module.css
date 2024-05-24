@@ -1,0 +1,33 @@
+.myBtn {
+    margin-right: 2em;
+}
+
+.myBtn a {
+    max-width: 9rem;     
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.3rem 1em;
+    border-radius: 1em;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: background .2s ease;
+}
+
+.myBtn a:hover {
+    background: rgb(214, 212, 212);
+}
+
+.checked {
+    background: black;
+    color: white;
+}
+
+@media (max-width: 800px) {
+    .myBtn {
+        margin-right: 1.5em;
+        margin-bottom: 1em;
+    }
+}
+  

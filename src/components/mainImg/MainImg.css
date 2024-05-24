@@ -1,0 +1,12 @@
+.blockPage {
+    order: 1;
+    width: 50%;
+    margin: 2rem 0;
+}
+
+@media (max-width: 660px) {
+    .blockPage {
+        width: 100%;
+        margin: 0;
+    }
+  }  

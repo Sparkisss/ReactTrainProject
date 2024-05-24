@@ -1,18 +1,19 @@
 .wrap {
     display: flex;
     justify-content: space-between;
-    padding: 0 2rem;
-    height: 5rem;
-    border-bottom: 1px solid #666;
-    border-top: 1px solid #666;
+    padding: 0 4em;
+    height: 5em;
+    border-bottom: 1px solid #beb8b8;
+    border-top: 1px solid #beb8b8;
+}
+
+.wrap .logo{
+    width: 3.125em;
+    margin-right: 2em;
 }
 
 .wrap .nav {
     display: flex;
-}
-
-.wrap .nav .logo{
-    width: 3.125rem;
 }
 
 .wrap .nav nav ul {
@@ -23,7 +24,12 @@
 }
 
 .wrap .nav nav ul li {
-    margin-left: 20px;
+    margin-left: 1.25em;
+    transition: color .2s ease;
+}
+
+.wrap .nav nav ul li:hover {
+    color: green;
 }
 
 .wrap .logIn {
@@ -33,9 +39,79 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 40px;
+    margin-right: 2.5em;
+    font-weight: bold;
+    transition: color .2s ease;
+}
+.wrap .logIn div:hover {
+    color: green;
 }
 
-.wrap .logIn button {
-    margin-right: 20px;
+.wrap .logIn div img {
+    height: 1em;
+    margin-right: 0.625em;
 }
+  
+@media (max-width: 800px) {
+    .wrap {   
+        padding: 0 3em;
+    }
+    .wrap .logIn div {
+        margin-right: 1.5em;
+    }
+    .wrap .nav,
+    .wrap .logIn {
+        display: none;
+    }
+
+    .wrap .nav.active,
+    .wrap .logIn.active{
+        display: flex;
+        position: fixed;
+        flex-direction: column;
+        background-color: rgb(228, 221, 221);
+        width: 100%;        
+        z-index: 3;
+        padding-left: 2rem;
+    }
+
+    .wrap .nav.active {
+        height: 35%;
+        top: 5em;
+        border-bottom: 1px solid #000;
+    }
+
+    .wrap .logIn.active {
+        top: calc(35% + 5em);
+        height: 65%;
+    }
+
+    .wrap .nav.active nav {
+        height: 100%;        
+    }
+
+    .wrap .nav.active nav ul{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+
+    .wrap .nav.active nav ul li a{
+        font-size: 2rem;
+    }
+
+    .wrap .logIn.active div {
+        justify-content: flex-start;
+        margin: 2rem 0;        
+    }
+
+    .wrap .logIn.active div img {
+        height: 2rem;
+    }
+
+    .wrap .logIn.active div a {
+        font-size: 2rem;
+    }
+}
+
