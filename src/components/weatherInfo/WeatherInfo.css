@@ -1,0 +1,14 @@
+.weatherInfo {
+    display: flex;
+    align-items: center;
+    grid-area: info;
+}
+
+.weatherInfo ul li {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.weatherInfo ul li:last-child {
+    margin-bottom: 0;
+}

@@ -76,6 +76,19 @@ code {
   margin: 0 auto;
 }
 
+.weatherContain {
+  padding: 10em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 20% 80%;
+  grid-template-areas: 
+        "page form"
+        "page info";
+  height: 85%;
+  background-color: #97d8b1;
+  border: 10px solid #000;
+}
+
 @media (max-width: 1024px) {
   * {
     font-size: 14px;
