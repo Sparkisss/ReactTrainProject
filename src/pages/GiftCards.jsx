@@ -1,10 +1,15 @@
 import React from 'react';
+import Slider from '../components/slider/Slider';
 
 const GiftCards = () => {
     return (
-        <div>
-            <h2>Gift Cards page</h2>
-        </div>
+        <>
+            <Slider >
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>    
+            </Slider>
+        </>
     );
 };
 
