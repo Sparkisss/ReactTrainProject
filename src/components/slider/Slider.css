@@ -1,24 +1,75 @@
-.sliderContainer {
+.mainContainer {
+    height: 950px;
+    width: 750px;
     display: flex;
-    gap: 1em;
-    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
-
-.sliderContainer .arrow {
-    height: 20px;
+.mainContainer .btn {
+    height: 2em;
     cursor: pointer;
 }
-.sliderContent {
-    display: flex;
-    width: 450px;
-    margin: 0 auto;
-    overflow: hidden;     
+
+.mainContainer .window {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
 }
 
-.sliderContent div {
-    height: 50px;
-    width: 50px;
-    border: 3px solid #000;
-    text-align: center;
-    transition: all 1s ease;
+.mainContainer .window .itemsContainer {
+    height: 100%;
+    display: flex;
+}
+
+.mainContainer .window .itemsContainer .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    user-select: none;
+    height: 100%;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.mainContainer .window .itemsContainer .item h2 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.mainContainer .window .itemsContainer .item p {
+    font-weight: bold;
+}
+
+.mainContainer .window .itemsContainer .item img {
+    width: 50%;
+}
+
+.dots {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+
+.active {
+    background-color: #717171;
+}
+
+
+@keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
