@@ -11,6 +11,7 @@
 }
 
 .mainContainer .window {
+    margin-top: 1em;
     height: 100%;
     width: 100%;
     overflow: hidden;
@@ -44,11 +45,14 @@
 
 .mainContainer .window .itemsContainer .item img {
     width: 50%;
+    padding-bottom: 1em;
+    cursor: pointer;
 }
 
 .dots {
     position: absolute;
-    top: 90%;
+    cursor: pointer;
+    top: 96%;
     left: 50%;
     transform: translateX(-50%);
 }

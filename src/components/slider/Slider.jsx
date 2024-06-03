@@ -4,23 +4,27 @@ import btnLeft from '../../source/icon/angle-double-left.svg';
 import btnRight from '../../source/icon/angle-double-right.svg';
 import './Slider.css'
 
-const Slide = memo(({ slide, i, pages }) => {
+const Slide = memo(({ slide, i, pages, setActive}) => {
     return (i === pages) && <div className='item' style={{animation: 'fade-in 1s'}}>
         <h2>{slide.title}</h2>
         <p>{slide.subTitle}</p>
-        <img src={slide.img} alt={i} />
+        <img src={slide.img} alt={i} onClick={() => setActive(true)}/>
     </div>
 });
 
-const Slider = () => {
+const Slider = ({active, setActive, onPagesChange}) => {
     const [pages, setPages] = useState(0);
 
     const handleClickLeft = useCallback(() => {
-        setPages((pages + 1) % dataSlider.length);
+        const newPages = (pages + 1) % dataSlider.length;
+        setPages(newPages);
+        onPagesChange(newPages);
     }, [pages])
 
     const handleClickRight = useCallback(() => {
-        setPages((pages - 1 + dataSlider.length) % dataSlider.length);
+        const newPages = (pages - 1 + dataSlider.length) % dataSlider.length;
+        setPages(newPages);
+        onPagesChange(newPages)
     }, [pages])
 
     return (
@@ -34,15 +38,19 @@ const Slider = () => {
                 <div className='dots'>
                     {
                         dataSlider.map((_, i) => {
-                            return <span key={i + 1} className={`dot ${i === pages ? 'active' : ''}`} onClick={() => setPages(i)}></span>
+                            return <span key={i + 1} className={`dot ${i === pages ? 'active' : ''}`} onClick={() => {
+                                setPages(i);
+                                onPagesChange(i)
+                            }
+                            }></span>
                         })
                     }
                 </div>
                 <div className='itemsContainer'>
                     {
                         dataSlider.map((slide, i) => {
-                            return <Slide key={slide.id+1} slide={slide} i={i} pages={pages} />
-                        })
+                            return <Slide key={slide.id+1} slide={slide} i={i} pages={pages} active={active} setActive={setActive} />
+                        })                        
                     }
                 </div>
 
