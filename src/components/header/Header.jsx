@@ -1,12 +1,15 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import './Header.css'
 import logo from '../../source/icon/starbucks.svg'
 import placeIcon from '../../source/icon/marker.svg'
 import { Link } from 'react-router-dom';
 import Button from '../UI/button/Button';
 import HamburgerMenu from '../hamburgerMenu/HamburgerMenu';
+import { Context } from '../../index';
+import { observer } from 'mobx-react-lite';
 
-const Header = () => {
+const Header = observer(() => {
+    const {user} = useContext(Context)
     const [isActive, setIsActive] = useState(false);
     const [btnSize, setBtnSize] = useState('0.9em');
 
@@ -23,7 +26,7 @@ const Header = () => {
                     <nav>
                         <ul>
                             <li>
-                                <Link to="/menu">MENU</Link>
+                                <Link to="/store">Online store</Link>
                             </li>
                             <li>
                                 <Link to="/rewards">REWARDS</Link>
@@ -39,13 +42,21 @@ const Header = () => {
                         <img className='logo' src={placeIcon} alt="logo" />
                         <Link to="/findStore">Find store</Link>
                     </div>
-                    <Button route={"/rewards"} state={''} size={btnSize}>Sign in</Button>
-                    <Button route={"/"} state={'checked'} size={btnSize}>Join now</Button>
+                    {user.isAuth ? 
+                        <>
+                            <Button route={"/auth"} state={''} size={btnSize}>Admin panel</Button>
+                            <Button route={"/auth"} state={''} size={btnSize}>Exit</Button>
+                        </>
+                        :
+                        <>
+                            <Button route={"/auth"} state={''} size={btnSize}>Sign in</Button>
+                        </>
+                    }
                     <hr/>
                 </div>
                 <HamburgerMenu isActive={isActive} toggleActiveClass={toggleActiveClass}/>
             </div>
     );
-};
+});
 
 export default Header;

@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Menu = () => {
+const Auth = () => {
     return (
         <div>
-            <h2>Menu page</h2>
+            AUTH
         </div>
     );
 };
 
-export default Menu;
+export default Auth;
