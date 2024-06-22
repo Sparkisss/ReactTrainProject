@@ -1,10 +1,15 @@
 import React from 'react';
+import NavBar from '../components/navBar/NavBar';
+import BrandBar from '../components/brandBar/BrandBar';
+import DeviceList from '../components/deviceList/DeviceList';
 
 const Store = () => {
     return (
-        <div>
-            <h2>Internet store</h2>
-        </div>
+        <main className='store'>
+            <NavBar/>
+            <BrandBar/>
+            <DeviceList/>
+        </main>
     );
 };
 

@@ -1,0 +1,23 @@
+.navigation {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    grid-area: nav;
+}
+.navigation ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    border: 1px solid #000;
+    height: 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.navigation ul li:hover {
+    background-color: rgba(0, 0, 255, 0.363);
+}
+
+.navigation ul li.active {
+    background-color: rgba(13, 223, 94, 0.849);
+}

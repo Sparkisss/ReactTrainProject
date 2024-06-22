@@ -5,10 +5,10 @@ import { Context } from '../../../index';
 import { observer } from 'mobx-react-lite';
 
 
-const Button = observer(({children, size, ...props}) => {
+const Button = observer(({children, size, arg, ...props}) => {
     const {user} = useContext(Context)
     return (
-        <button className={classes.myBtn} onClick={() => user.setIsAuth(true)}>
+        <button className={classes.myBtn} onClick={() => user.setIsAuth(arg)}>
             <Link to={props.route} className={classes[props.state]} style={{ fontSize: size }}>{children}</Link>
         </button>
     );

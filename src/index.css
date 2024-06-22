@@ -89,6 +89,15 @@ code {
   border: 10px solid #000;
 }
 
+.store {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 8% 90%;
+  grid-template-rows: 8% 90%;
+  grid-template-areas: "nav brands"
+                       "nav items";
+}
+
 @media (max-width: 1024px) {
   * {
     font-size: 14px;

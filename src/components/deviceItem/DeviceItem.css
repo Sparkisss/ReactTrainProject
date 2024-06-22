@@ -1,0 +1,12 @@
+.device img {
+    width: 150px;
+}
+
+.device .device__info div img {
+    width: 20px;
+}
+
+.device__info-text {
+    display: flex;
+    gap: 3rem;
+}

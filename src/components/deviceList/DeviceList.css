@@ -1,0 +1,14 @@
+.devices__place {
+    border: 1px solid #000;
+    margin: 1rem;
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    overflow:scroll;
+    border-radius: 5px;
+}
+.devices__place > * {
+    flex-basis: calc(25% - 1rem); /* Устанавливаем ширину элемента на 25% минус отступ */
+    width: calc(25% - 1rem); /* Устанавливаем ширину элемента на 25% минус отступ */
+}

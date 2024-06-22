@@ -26,7 +26,7 @@ const Header = observer(() => {
                     <nav>
                         <ul>
                             <li>
-                                <Link to="/store">Online store</Link>
+                                <Link to="/store">ONLINE STORE</Link>
                             </li>
                             <li>
                                 <Link to="/rewards">REWARDS</Link>
@@ -44,12 +44,12 @@ const Header = observer(() => {
                     </div>
                     {user.isAuth ? 
                         <>
-                            <Button route={"/auth"} state={''} size={btnSize}>Admin panel</Button>
-                            <Button route={"/auth"} state={''} size={btnSize}>Exit</Button>
+                            <Button route={"/auth"} state={''} size={btnSize} arg={false}>Admin panel</Button>
+                            <Button route={"/auth"} state={''} size={btnSize} arg={false}>Exit</Button>
                         </>
                         :
                         <>
-                            <Button route={"/auth"} state={''} size={btnSize}>Sign in</Button>
+                            <Button route={"/auth"} state={''} size={btnSize} arg={true}>Sign in</Button>
                         </>
                     }
                     <hr/>

@@ -1,0 +1,28 @@
+.brand {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    grid-area: brands;
+}
+.brand ul {
+    display: flex;
+    flex-direction: row;
+}
+.brand ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    border: 1px solid #000;
+    height: 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 0.4rem;
+}
+
+.brand ul li:hover {
+    background-color: rgba(0, 0, 255, 0.363);
+}
+
+.brand ul li.active {
+    background-color: rgba(32, 151, 187, 0.849);
+}
