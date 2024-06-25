@@ -15,6 +15,7 @@ const DeviceItem = ({device}) => {
                     <div>{device.rating}</div>
                     <img src={star} alt="1" />
                 </div>
+                <button>Defoult</button>
             </div>
             <div>{device.name}</div>
         </div>
