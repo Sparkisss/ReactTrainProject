@@ -13,7 +13,7 @@ const DeviceItem = ({device}) => {
                 <div>Samsung...</div>
                 <div className='device__info-text'>
                     <div>{device.rating}</div>
-                    <img src={star} alt="100" />
+                    <img src={star} alt="1010" />
                 </div>
                 <button>Defoult</button>
             </div>
